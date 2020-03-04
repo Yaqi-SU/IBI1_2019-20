@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-I like milk. I like coffee. I like rain. I like books. I like films. I like sea. I like snow. I like summer very much. I like bioinformatics. I like fresh air.
-=======
- I like coffee.  I don't like snakes. I like films. I like sea. I like snow. I like summer. I like bioinformatics. I like winter. I like basketball. I like birds. I like trees. I like flowers.
->>>>>>> Elain
