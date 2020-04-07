@@ -9,9 +9,12 @@ import os
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+# Import the .csv file
 os.chdir('C:\\Users\\suyaqi\\Desktop\\IBI1\\IBI1_2019-20\\Practical7')
 covid_data=pd.read_csv('full_data.csv')
+# Show all rows, and every third column between(and including) 0 and 15
 covid_data.iloc[0:16,0:6:3]
+# Show "total cases" for all rows corresponding to Afghanistan
 data1=covid_data.iloc[:,1]
 list=[]
 for i in range(0,7996):
@@ -21,7 +24,7 @@ for i in range(0,7996):
         continue
 totalcases=[False,False,False,False,True,False]
 Afghanistan_totalcases=covid_data.iloc[list,totalcases]
-
+#Compute the mean and median of new cases for the entire world
 list1=[]
 for m in range(0,7996):
     if data1[m]=='World':
@@ -34,10 +37,12 @@ median_newcases=np.median(world_newcases)
 mean_newcases=np.mean(world_newcases)
 print('The mean for new cases around the world is',mean_newcases)
 print('The median for new cases around the world is',median_newcases)
+#Create a boxplot of new cases worldwide
 plt.boxplot(world_newcases,vert=True,whis=1.5,patch_artist=True,meanline=False,showbox=True,showcaps=True,showfliers=True,notch=False)
 plt.title('World new cases')
 plt.ylabel('Number')
 plt.show()
+#PLot both new cases and new deaths worldwide
 plt.plot(world_dates,world_newcases,'b+')
 plt.xticks(world_dates.iloc[0:len(world_dates):4],rotation=-90)
 plt.title('World new cases')
@@ -49,6 +54,7 @@ plt.xticks(world_dates.iloc[0:len(world_dates):4],rotation=-90)
 plt.title('World new deaths')
 plt.ylabel('Number of new deaths')
 plt.show()
+#Answering the question
 list4=[]
 for q in range(0,7996):
     if data1[q] !='World' and covid_data.loc[q,'date']=='2020-03-31':
