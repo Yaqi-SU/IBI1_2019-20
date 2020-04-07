@@ -4,4 +4,8 @@ Line number: From line 58 to line 82.
 Discussion: Before writing codes to solve the question, I predicted the answers would be places that are remoted, relatively closed and
 primitive countries. Because I think in these places, few people can go abroad and the number of foreigners entering the country may
 also be limited because of the underdevelopment. This means that there is little chance of the virus spreading if the virus does not
-exist in these places at first. After running the codes I wrote, the result showed that my prediction was generally accurate. Moreover, I noticed that there were many islands in the answers such as greenland, falkland island, mariana island and so forth. I think it is because they are surrounded by the sea that builds a natural barrier between them and the major epidemic area,inland. Additionally, the population density on the island is usually smaller than that on inland, which may also stem the spread of COVID-19 by reducing the possibility of the crowding of infected and susceptible hosts.
+exist in these places at first. After running the codes I wrote, the result showed that my prediction was generally accurate. Moreover,
+I noticed that there were many islands in the answers such as greenland, falkland island, mariana island and so forth. I think it is
+because they are surrounded by the sea that builds a natural barrier between them and the major epidemic area,inland. Additionally, 
+the population density on the island is usually smaller than that on inland, which may also stem the spread of COVID-19 by reducing 
+the possibility of the crowding of infected and susceptible hosts.
