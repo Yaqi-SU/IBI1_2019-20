@@ -20,7 +20,7 @@ for i in range(0,7996):
     else:
         continue
 totalcases=[False,False,False,False,True,False]
-covid_data.iloc[list,totalcases]
+Afghanistan_totalcases=covid_data.iloc[list,totalcases]
 
 list1=[]
 for m in range(0,7996):
@@ -29,15 +29,7 @@ for m in range(0,7996):
     else:
         continue
 world_dates=covid_data.loc[list1,'date']
-
-
-list2=[]
-for n in range(0,7996):
-    if data1[n]=='World':
-        list2.append(n)
-    else:
-        continue
-world_newcases=covid_data.loc[list2,'new_cases']
+world_newcases=covid_data.loc[list1,'new_cases']
 median_newcases=np.median(world_newcases)
 mean_newcases=np.mean(world_newcases)
 print('The mean for new cases around the world is',mean_newcases)
@@ -51,13 +43,7 @@ plt.xticks(world_dates.iloc[0:len(world_dates):4],rotation=-90)
 plt.title('World new cases')
 plt.ylabel('Number of new cases')
 plt.show()
-list3=[]
-for k in range(0,7996):
-    if data1[k]=='World':
-        list3.append(k)
-    else:
-        continue
-world_newdeaths=covid_data.loc[list3,'new_deaths']
+world_newdeaths=covid_data.loc[list1,'new_deaths']
 plt.plot(world_dates,world_newdeaths,'r+')
 plt.xticks(world_dates.iloc[0:len(world_dates):4],rotation=-90)
 plt.title('World new deaths')
