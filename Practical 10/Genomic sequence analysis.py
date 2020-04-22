@@ -91,9 +91,12 @@ for k in range(len(seq3)):
         Haming_distance3+=1
     else:
         continue
-ID1 = (1-Haming_distance1/len(seq1))*100
-ID2 = (1-Haming_distance2/len(seq2))*100 
-ID3 = (1-Haming_distance3/len(seq3))*100
+ID1 = (len(seq1)-Haming_distance1)/len(seq1)*100
+ID2 = (len(seq2)-Haming_distance2)/len(seq2)*100 
+ID3 = (len(seq3)-Haming_distance3)/len(seq3)*100
+print('The hamming distance between human and mouse is',Haming_distance1)
+print('The hamming distance between human and random is',Haming_distance2)
+print('The hamming distance between mouse and random is',Haming_distance3)
 print('The percentage identity between human and mouse is',ID1,'%')
 print('The percentage identity between human and random is', ID2,'%')
 print('The percentage identity between mouse and random is', ID3,'%')
