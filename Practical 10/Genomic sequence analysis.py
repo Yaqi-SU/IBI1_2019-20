@@ -74,7 +74,7 @@ for x in range(len(seq2)):
                 continue
 print('The sum scores between mouse and random is',score2)
 print(seq2,alignment2)
-#Calculate the hamming distance
+#Calculate the percentage identity
 Haming_distance1 =0
 Haming_distance2=0
 Haming_distance3=0
@@ -91,16 +91,12 @@ for k in range(len(seq3)):
         Haming_distance3+=1
     else:
         continue
-Score2 = Haming_distance2/len(seq1)
-Score3 = Haming_distance3/len(seq2)
-Score1 = Haming_distance1/len(seq1)
-print('The hamming distance between human and mouse is',Haming_distance1)
-print('The hamming distance between human and random is', Haming_distance2)
-print('The hamming distance between mouse and random is', Haming_distance3)
-
-
-
-                
+ID1 = (1-Haming_distance1/len(seq1))*100
+ID2 = (1-Haming_distance2/len(seq2))*100 
+ID3 = (1-Haming_distance3/len(seq3))*100
+print('The percentage identity between human and mouse is',ID1,'%')
+print('The percentage identity between human and random is', ID2,'%')
+print('The percentage identity between mouse and random is', ID3,'%')
                 
             
             
