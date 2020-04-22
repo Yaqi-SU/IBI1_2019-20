@@ -74,7 +74,7 @@ for x in range(len(seq2)):
                 continue
 print('The sum scores between mouse and random is',score2)
 print(seq2,alignment2)
-#Calculate the percentage identity
+#Calculate the hamming distance and the percentage identity
 Haming_distance1 =0
 Haming_distance2=0
 Haming_distance3=0
