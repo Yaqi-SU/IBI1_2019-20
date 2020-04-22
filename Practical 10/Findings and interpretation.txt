@@ -1,0 +1,24 @@
+A short summary about my findings and the interpretation
+I wrote a python script to output the sum of the scores between human and mouse,
+human and random, mouse and random. The output scores I obtained are 1091
+(human-mouse), -250(human-random), and -250(mouse-random). I also wrote codes
+to output the corresponding alignments as well as the hamming distance. In "human
+ -mouse",  the hamming distance is 23 and there are 4 "+", which indicates the
+conservative substitutions between these two amino acids that will not likely
+to cause huge impacts on the functions of the protein. In "human-random",  the 
+hamming distance is 210 and there are 23 "+" presented. The hamming distance of 
+"mouse-random" is 209 and there are 22 "+"presented. The percentage identities of 
+"human-mouse", "human-random", "mouse-random" are 89.64%, 5.41%, and 5.86%.
+From the BLOSUM62 matrix I found that the substitutions matching to each other have
+relatively high postive scores while the negative scores are all for the substitutions that are
+different from each other. Therefore, I think the higher the sum scores are, the higher the
+similarity between two sequences will be. 
+I found that the sum scores of "human-mouse" is relatively high and the hamming distance 
+of it is quite short, which indicates that there is a high similarity between SOD2_human and 
+SOD2_mouse. Considering the biological meaning, the high similarity between human and 
+mouse sequences also indicates that human and mouse, which are both mammals, may share 
+a common ancestor.
+However, both the scores of "human-random" and "mouse-random" are very low, 
+which are negative. And their hamming distances are both relatively large, which are over 90% 
+of their lengths. These show that the similarity between human and random, mouse and random 
+are low. 
