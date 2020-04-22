@@ -12,7 +12,7 @@ d=c/11
 e=d/13
 if a>e:
     print('a is greater than e')
-elif a==b:
+elif a==e:
     print('a is equal to e')
 else:
     print('e is greater than a')
