@@ -8,7 +8,7 @@ conservative substitutions between these two amino acids that will not likely
 to cause huge impacts on the functions of the protein. In "human-random",  the 
 hamming distance is 210 and there are 23 "+" presented. The hamming distance of 
 "mouse-random" is 209 and there are 22 "+"presented. The percentage identities of 
-"human-mouse", "human-random", "mouse-random" are 89.69%, 5.83%, and 6.28%.
+"human-mouse", "human-random", "mouse-random" are about 89.69%, 5.83%, and 6.28%.
 From the BLOSUM62 matrix I found that the substitutions matching to each other have
 relatively high postive scores while the negative scores are all for the substitutions that are
 different from each other. Therefore, I think the higher the sum scores are, the higher the

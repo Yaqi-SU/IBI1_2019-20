@@ -16,14 +16,15 @@ covid_data=pd.read_csv('full_data.csv')
 covid_data.iloc[0:16,0:6:3]
 # Show "total cases" for all rows corresponding to Afghanistan
 data1=covid_data.iloc[:,1]
-list=[]
+Boolean_list=[]
 for i in range(0,7996):
     if data1[i]=='Afghanistan':
-        list.append(i)
+        Boolean_list.append(True)
     else:
-        continue
+        Boolean_list.append(False)
 totalcases=[False,False,False,False,True,False]
-Afghanistan_totalcases=covid_data.iloc[list,totalcases]
+Afghanistan_totalcases=covid_data.iloc[Boolean_list,totalcases]
+print(Afghanistan_totalcases)
 #Compute the mean and median of new cases for the entire world
 list1=[]
 for m in range(0,7996):
@@ -54,7 +55,7 @@ plt.xticks(world_dates.iloc[0:len(world_dates):4],rotation=-90)
 plt.title('World new deaths')
 plt.ylabel('Number of new deaths')
 plt.show()
-#Answering the question
+#Answering the question:Are there places in the World there have not yet been more than 10 total infections(as on 31 March)? If so, where are they?
 list4=[]
 for q in range(0,7996):
     if data1[q] !='World' and covid_data.loc[q,'date']=='2020-03-31':
@@ -80,12 +81,7 @@ else:
         else:
             answer = answer+places[k]+','
     print('Yes. They are',answer)
-    
-
-
-        
-
-
+ 
     
         
 

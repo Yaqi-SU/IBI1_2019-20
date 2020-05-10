@@ -1,5 +1,5 @@
 # What does this piece of code do?
-# Answer: This code is to find an n between 1 and 100 which is not divisible by any integer between 2 and the ceiling of n**(0.5) plus 1. 
+# Answer: This code is to randomly find a prime number between 1 and 100. 
 
 # Import libraries
 # randint allows drawing a random number, 
