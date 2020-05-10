@@ -71,8 +71,14 @@ for x in range(len(seq2)):
                 else:
                     alignment2=alignment2+'-'
                 continue
+<<<<<<< HEAD:Practical 10/Alignment.py
 
 #Calculate the hamming distance and percentage identity
+=======
+print('The sum scores between mouse and random is',score2)
+print(seq2,alignment2)
+#Calculate the hamming distance and the percentage identity
+>>>>>>> master:Practical 10/Genomic sequence analysis.py
 Haming_distance1 =0
 Haming_distance2=0
 Haming_distance3=0

@@ -1,5 +1,5 @@
 Question：Are there places in the World there have not yet been more than 10 total infections(as on 31 March)? If so, where are they?
-Line number: From line 58 to line 82.
+Line number: From line 58 to line 83.
 Discussion: Before writing codes to solve the question, I predicted the answers would be places that are remoted, relatively closed and
 primitive countries. Because I think in these places, few people can go abroad and the number of foreigners entering the country may
 also be limited because of the underdevelopment. This means that there is little chance of the virus spreading if the virus does not
