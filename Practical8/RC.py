@@ -6,9 +6,9 @@ Created on Wed Apr  1 08:59:30 2020
 """
 
 seq = 'ATGCGACTACGATCGAGGGCCAT'
-re = seq[::-1]
-reverse_seq = ''
-for i in re:
+re = seq[::-1]#reverse the sequence
+reverse_seq = ''#An empty string to store the reverse complementary sequence
+for i in re:#Get the complementary sequence according to "A-T,C-G" rule
     if i == 'A':
         reverse_seq+='T'
     elif i =='T':

@@ -1,0 +1,9 @@
+1.General reflction about the course: During the IBI1 course, I learned how to work with numbers, strings, functions and algorithms using
+python. And I also got the basic knowledge of  navigating a Unix-like system. During the practial courses, since I have never learned about
+python before, I found it hard to complete the task by myslef at first, so I spent a lot of time searching for online sources to get a better understanding
+about some basic python coding skills, and I also asked teachers as well as classmates for help. Therefore, my coding skills improved gradually
+and I found although programming is not easy, it is really an interesting process.
+
+2.Reflection about the formative feedback: I am really sorry for mistakenly placing the portfolio in wrong place at first and I reuploaded them to the 
+right repository immediately after recerving the feedback. I also corrected all the mistakes pointed out in the feedback. Additionally, I rechecked my 
+codes and made some other changes to improve them after the corrections.

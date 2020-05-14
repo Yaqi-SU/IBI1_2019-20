@@ -1,0 +1,7 @@
+During practical 13, I learned the principles of SIR model and spatial SIR model, and I also managed to 
+simulate the models using python following the guidance. I figured out how to add subplots in one plot,
+and learned about the use of np.random.choice(), which I think are both useful and interesting. In the programming process,
+I found it confused to randomly infect susceptible individuals using np.random.choice() at first. But later I 
+came up with the idea that I could use 0 to represent susceptible people and 1 to represent infected individuals.
+Generally speaking, although this practical is not a easy one for me, I really enjoyed it when I was trying to think of solutions
+to the difficulties I met with and was able to solve all the problems by myself eventually.

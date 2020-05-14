@@ -4,19 +4,19 @@ Created on Mon Apr  6 17:47:52 2020
 
 @author: suyaqi
 """
-
+#Import necessary libraries
 import os
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-# Import the .csv file
+# 1.Import the .csv file
 os.chdir('C:\\Users\\suyaqi\\Desktop\\IBI1\\IBI1_2019-20\\Practical7')
 covid_data=pd.read_csv('full_data.csv')
-# Show all rows, and every third column between(and including) 0 and 15
+# 2.Show all rows, and every third column between(and including) 0 and 15
 covid_data.iloc[0:16,0:6:3]
-# Show "total cases" for all rows corresponding to Afghanistan
+# 3.Show "total cases" for all rows corresponding to Afghanistan
 data1=covid_data.iloc[:,1]
-Boolean_list=[]
+Boolean_list=[]#Create an empty list to store boolean variables
 for i in range(0,7996):
     if data1[i]=='Afghanistan':
         Boolean_list.append(True)
@@ -25,8 +25,8 @@ for i in range(0,7996):
 totalcases=[False,False,False,False,True,False]
 Afghanistan_totalcases=covid_data.iloc[Boolean_list,totalcases]
 print(Afghanistan_totalcases)
-#Compute the mean and median of new cases for the entire world
-list1=[]
+#4.Compute the mean and median of new cases for the entire world
+list1=[]#An empty list to store the rows of World cases
 for m in range(0,7996):
     if data1[m]=='World':
         list1.append(m)
@@ -38,14 +38,14 @@ median_newcases=np.median(world_newcases)
 mean_newcases=np.mean(world_newcases)
 print('The mean for new cases around the world is',mean_newcases)
 print('The median for new cases around the world is',median_newcases)
-#Create a boxplot of new cases worldwide
+#5.Create a boxplot of new cases worldwide
 plt.boxplot(world_newcases,vert=True,whis=1.5,patch_artist=True,meanline=False,showbox=True,showcaps=True,showfliers=True,notch=False)
 plt.title('World new cases')
 plt.ylabel('Number')
 plt.show()
-#PLot both new cases and new deaths worldwide
+#6.PLot both new cases and new deaths worldwide
 plt.plot(world_dates,world_newcases,'b+')
-plt.xticks(world_dates.iloc[0:len(world_dates):4],rotation=-90)
+plt.xticks(world_dates.iloc[0:len(world_dates):4],rotation=-90)#Adjustments to x labels
 plt.title('World new cases')
 plt.ylabel('Number of new cases')
 plt.show()
@@ -55,15 +55,15 @@ plt.xticks(world_dates.iloc[0:len(world_dates):4],rotation=-90)
 plt.title('World new deaths')
 plt.ylabel('Number of new deaths')
 plt.show()
-#Answering the question:Are there places in the World there have not yet been more than 10 total infections(as on 31 March)? If so, where are they?
-list4=[]
+#7.Answering the question:Are there places in the World there have not yet been more than 10 total infections(as on 31 March)? If so, where are they?
+list4=[]#An empty list to store rows of World cases on '2020-03-31
 for q in range(0,7996):
     if data1[q] !='World' and covid_data.loc[q,'date']=='2020-03-31':
         list4.append(q)
     else:
         continue
 country_total=covid_data.loc[list4,'total_cases']
-list5=[]
+list5=[]#An empty list to store rows of places with less than 10 cases
 list6=[10]
 for j in list4:
     if country_total[j] <=list6:
@@ -71,7 +71,7 @@ for j in list4:
     else:
         continue
 places=covid_data.loc[list5,'location']
-answer=''
+answer=''#An empty string to store the names of places with less than 10 cases
 if len(list5)==0:
     print('No, there are not places in the world where there have not yet been more than 10 total infections.')
 else:

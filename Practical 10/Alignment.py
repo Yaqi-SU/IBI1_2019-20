@@ -9,38 +9,36 @@ human=open('SOD2_human.fa','r')
 mouse=open('SOD2_mouse.fa','r')
 random=open('RandomSeq.fa','r')
 matrix=pd.read_csv('matrix.csv')
-seq1=''
-seq2=''
-seq3=''
-score=0
-score1=0
-score2=0
-#Calculate the sum scores and alignment sequences
+seq1=''#An empty string to store the SOD2_human sequence
+seq2=''#An empty string to store the SOD2_mouse sequence
+seq3=''#An emoty string to store the Random sequence
+score=0#The BLOSUM scores of human_mouse
+score1=0#The BLOSUM scores of human_random
+score2=0#The BLOSUM scores of mouse_random
 for line in human:
     if not 'human' in line:
         seq1 = seq1 + line
 for line in mouse:
     if not 'mouse' in line:
         seq2=seq2+line
-data1=matrix.iloc[:,0]
-data2=matrix.iloc[3,:]
-alignment=''
-alignment1=''
-alignment2=''
-for i in range(len(seq1)):
-    for j in range(0,27):
-        for m in range(0,24):
-            if seq1[i]==data1[j] and seq2[i]==data2[m] and seq1[i]==seq2[i]:
+data1=matrix.iloc[:,0]#All rows of amino acids in the matrix
+data2=matrix.iloc[3,:]#All columns of amino acids in the matrix
+alignment=''#An empty string to store the alignment of human_mouse
+alignment1=''#An empty string to store the alignment of human_random
+alignment2=''#An empty string to store the alignment of mouse_random
+for i in range(len(seq1)):#loop through human sequence
+    for j in range(0,27):#loop through the rows of amino acids
+        for m in range(0,24):#loop through the columns of amino acids
+            if seq1[i]==data1[j] and seq2[i]==data2[m] and seq1[i]==seq2[i]:#If the amino acids in two sequence are the same
                 score=score+int(matrix.iloc[j,m])
-                alignment=alignment+seq1[i]
-            elif seq1[i]==data1[j] and seq2[i]==data2[m] and seq1[i]!=seq2[i]:
+                alignment=alignment+seq1[i]#Add the amino acid in the alignment
+            elif seq1[i]==data1[j] and seq2[i]==data2[m] and seq1[i]!=seq2[i]:# If the amino acids in two sequence are not the same
                  score=score+int(matrix.iloc[j,m])
-                 if int(matrix.iloc[j,m]) > 0:
-                     alignment = alignment + '+'
-                 else:
-                     alignment = alignment + '-'
+                 if int(matrix.iloc[j,m]) > 0:#If the BLOSUM score is positive
+                     alignment = alignment + '+'#Add "+" to the alignment
+                 else:#If the BLOSUM score is negative
+                     alignment = alignment + '-'#Add "-" to the alingment
                  continue
-
 for line in random:
     if not 'Random' in line:
         seq3=seq3+line
@@ -71,14 +69,9 @@ for x in range(len(seq2)):
                 else:
                     alignment2=alignment2+'-'
                 continue
-<<<<<<< HEAD:Practical 10/Alignment.py
-
-#Calculate the hamming distance and percentage identity
-=======
-print('The sum scores between mouse and random is',score2)
-print(seq2,alignment2)
-#Calculate the hamming distance and the percentage identity
->>>>>>> master:Practical 10/Genomic sequence analysis.py
+            
+            
+#Calculate the hamming distance 
 Haming_distance1 =0
 Haming_distance2=0
 Haming_distance3=0
@@ -95,16 +88,17 @@ for k in range(len(seq3)):
         Haming_distance3+=1
     else:
         continue
+    
+#Calculate the percentage identity
 ID1 = (len(seq1)-Haming_distance1)/len(seq1)*100
 ID2 = (len(seq2)-Haming_distance2)/len(seq2)*100 
 ID3 = (len(seq3)-Haming_distance3)/len(seq3)*100
 
 
-print ('A comparsion between SOD2_human and SOD2_mouse\nSOD2_human:\n',seq1, '\n\nAlignment:\n', alignment, '\n\nSOD_mouse:\n',seq2, '\n\nThe final BLOSUM score is', str(score), '.\n', 'The Hamming distance is', str(Haming_distance1), ', the percentage identity of them is', ID1, '%.\n' )
-
-print ('A comparsion between SOD2_human and RandomSeq\nSOD2_human:\n',seq1, '\n\nAlignment:\n', alignment1, '\n\nRandomSeq:\n',seq3, '\n\nThe final BLOSUM score is', str(score1), '.\n', 'The Hamming distance is', str(Haming_distance2), ', the percentage identity  of them is', ID2, '%.\n' )
-
-print ('A comparsion between RandomSeq and SOD2_mouse\nRandomSeq:\n',seq3, '\n\nAlignment:\n', alignment2, '\n\nSOD_mouse:\n',seq2, '\n\nThe final BLOSUM score is', str(score2), '.\n', 'The Hamming distance is', str(Haming_distance3), ', the percentage identity  of them is', ID3, '%.\n' )
+#Print out the outcomes
+print ('A comparsion between SOD2_human and SOD2_mouse\nSOD2_human:\n',seq1, '\nAlignment:\n', alignment, '\n\nSOD_mouse:\n',seq2, '\nThe final BLOSUM score is', str(score),'.','\nThe Hamming distance is', str(Haming_distance1), ', the percentage identity of them is', ID1, '%.\n\n' )
+print ('A comparsion between SOD2_human and RandomSeq\nSOD2_human:\n',seq1, '\nAlignment:\n', alignment1, '\n\nRandomSeq:\n',seq3, '\nThe final BLOSUM score is', str(score1),'.','\nThe Hamming distance is', str(Haming_distance2), ', the percentage identity  of them is', ID2, '%.\n\n' )
+print ('A comparsion between RandomSeq and SOD2_mouse\nRandomSeq:\n',seq3, '\nAlignment:\n', alignment2, '\n\nSOD_mouse:\n',seq2, '\nThe final BLOSUM score is', str(score2),'.','\nThe Hamming distance is', str(Haming_distance3), ', the percentage identity  of them is', ID3, '%.\n\n' )
 
 
                 
